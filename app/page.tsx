@@ -1,6 +1,5 @@
 'use client';
 
-// pages/map.tsx
 import dynamic from 'next/dynamic';
 import { NextPage } from 'next';
 

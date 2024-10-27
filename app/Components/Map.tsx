@@ -15,20 +15,25 @@ const Map: React.FC<MapProps> = ({
   zoom = 10,
 }) => {
   const mapElement = useRef<HTMLDivElement>(null);
+
   const mapInstance = useRef<TomTomMap | null>(null);
 
   useEffect(() => {
+    console.log('Initializing TomTom map...');
     if (mapElement.current && !mapInstance.current) {
       mapInstance.current = tt.map({
         key: apiKey,
         container: mapElement.current,
-        style: 'tomtom://vector/1/basic-main',
+        // style:
+        // 'https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css',
         center,
         zoom,
       });
+      console.log('Map initialized:', mapInstance.current);
     }
 
     return () => {
+      console.log('Cleaning up map instance');
       mapInstance.current?.remove();
     };
   }, [apiKey, center, zoom]);

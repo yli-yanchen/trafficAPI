@@ -1,3 +1,5 @@
+@import url('https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +11,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #0a0a0a;
   }
 }
 
